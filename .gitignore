@@ -1,0 +1,12 @@
+*.bak
+bin
+obj
+monitor.suo
+StockTraderModel
+Templates
+TestResults
+TestProject1
+TestStockTrader
+–«”Ó
+*.testsettings
+monitor.vsmdi

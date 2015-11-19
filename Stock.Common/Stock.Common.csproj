@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{20C7D12A-F795-454C-8437-C09FDEA02839}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Stock</RootNamespace>
+    <AssemblyName>Stock.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Stock.Trader.Gui\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IronPython, Version=2.7.5.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Scripting, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\lib\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.98.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.98.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\EntrustRecord.cs" />
+    <Compile Include="Account\StockHolderInfo.cs" />
+    <Compile Include="Account\StrategyDesc.cs" />
+    <Compile Include="Account\TransactionRecords.cs" />
+    <Compile Include="Common\NotifyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\NotifyForm.Designer.cs">
+      <DependentUpon>NotifyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\WSClient.cs" />
+    <Compile Include="Common\DataGridViewCellStyleFactory.cs" />
+    <Compile Include="Common\DataHelper.cs" />
+    <Compile Include="Common\DllUtils.cs" />
+    <Compile Include="Common\HttpClient.cs" />
+    <Compile Include="Common\LogHelper.cs" />
+    <Compile Include="Common\StockUtil.cs" />
+    <Compile Include="Common\TimeoutChecker.cs" />
+    <Compile Include="Market\Bid.cs" />
+    <Compile Include="Market\BidCacheQueue.cs" />
+    <Compile Include="Market\FundData.cs" />
+    <Compile Include="Market\StockMarketListener.cs" />
+    <Compile Include="Market\StockMarketManager.cs" />
+    <Compile Include="Market\TongShiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Market\TongShiForm.Designer.cs">
+      <DependentUpon>TongShiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\Configure.cs" />
+    <Compile Include="Sqlite\SqliteHelper.cs" />
+    <Compile Include="Strategy\BaseStrategy.cs" />
+    <Compile Include="Strategy\IControlOperation.cs" />
+    <Compile Include="Strategy\IStrategy.cs" />
+    <Compile Include="Strategy\IStrategyDesc.cs" />
+    <Compile Include="Strategy\IStrategyGroup.cs" />
+    <Compile Include="Strategy\AddStockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Strategy\AddStockForm.Designer.cs">
+      <DependentUpon>AddStockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Strategy\PythonStrategy\PythonStrategy.cs" />
+    <Compile Include="Strategy\StrategyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Strategy\StrategyManager.cs" />
+    <Compile Include="System.Window\Enums.cs" />
+    <Compile Include="System.Window\Structs.cs" />
+    <Compile Include="System.Window\Win32API.cs" />
+    <Compile Include="System.Window\Win32Code.cs" />
+    <Compile Include="Trader\BaseStockTrader.cs" />
+    <Compile Include="Trader\IFundTrader.cs" />
+    <Compile Include="Trader\IStockTrader.cs" />
+    <Compile Include="Trader\MockStockTrader.cs" />
+    <Compile Include="Trader\StockTraderManager.cs" />
+    <Compile Include="Trader\TraderResult.cs" />
+    <Compile Include="Account\TradingAccount.cs" />
+    <Compile Include="Trader\TradingList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Common\NotifyForm.resx">
+      <DependentUpon>NotifyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strategy\AddStockForm.resx">
+      <DependentUpon>AddStockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strategy\StrategyControl.resx">
+      <DependentUpon>StrategyControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\websocket-sharp\websocket-sharp\websocket-sharp.csproj">
+      <Project>{B357BAC7-529E-4D81-A0D2-71041B19C8DE}</Project>
+      <Name>websocket-sharp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
